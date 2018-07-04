@@ -33,4 +33,7 @@ urlpatterns = [
 
     #register
     path('register/', views.register, name='register'),
+
+    #profile
+    path('edit/', views.edit, name='edit'),
 ]
