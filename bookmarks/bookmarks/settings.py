@@ -140,15 +140,34 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 #authenticate
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
+
+    #custom
     'account.authentication.EmailAuthBackend',
+
+    #facebook
     'social_core.backends.facebook.FacebookOAuth2',
+
+    #twitter
+    'social_core.backends.twitter.TwitterOAuth',
+
+    #google
+    'social_core.backends.google.GoogleOAuth2',
 ]
 
 
-#Facebook auth
+# Facebook auth
 SOCIAL_AUTH_FACEBOOK_KEY = '245279936202832'
 SOCIAL_AUTH_FACEBOOK_SECRET = '1b19a73b0ab8acb44a331acec6e198f1'
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+# Twitter auth
+SOCIAL_AUTH_TWITTER_KEY = 'QdbTTVtiPhP89RufxbbCp4741'
+SOCIAL_AUTH_TWITTER_SECRET = 'Jj5pzG5zywi3npMYPAuc2gKVhAB5EE6Vmy42n4Ooh1CN33Isu2'
+
+# Google auth
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '450325457331-pcqkq7g6dp47nfvb6b88241h490frg4p.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '2FH_rYEJ84qaD6547-5AHzeu'
+
 
 
 
