@@ -1,4 +1,4 @@
-import requests
+from urllib import request
 
 from django import forms
 from django.core.files.base import ContentFile
@@ -30,9 +30,9 @@ class ImageCreateForm(forms.ModelForm):
         image_name = '{}.{}'.format(slugify(image.title),
                                    image_url.rsplit('.',1)[1].lower())
 
-        response = requests.get(image_url, verify=False)
+        response = request.urlopen(image_url)
         image.image.save(image_name,
-                         ContentFile(response.raw.read()),
+                         ContentFile(response.read()),
                          save=False)
         if commit:
             image.save()
